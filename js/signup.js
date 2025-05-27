@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   
   // Define la URL base según si está en local o en servidor
-  const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/IkerA_ProyectoLGMSI";
+  const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/IkerAguado_ProyectoLGMSI";
   
   // Obtiene referencias a los elementos del formulario
   const form = document.getElementById("form-register");

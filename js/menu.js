@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/IkerA_ProyectoLGMSI";
+  const BASE_URL = window.location.hostname === "127.0.0.1" ? "" :"/IkerAguado_ProyectoLGMSI";
 
   const btnMenu = document.querySelector("#btn-menu");
   const navHeader = document.querySelector("#nav-header");

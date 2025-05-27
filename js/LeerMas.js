@@ -1,4 +1,4 @@
-const BASE_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost" ? "" : "/IkerA_ProyectoLGMSI";
+const BASE_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost" ? "" : "/IkerAguado_ProyectoLGMSI";
 
 const btn1 = document.querySelector("#art1 button");
 const btn2 = document.querySelector("#art2 button");
