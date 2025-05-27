@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+  </head>
+  <body>
+    <header>
+      <div class="contenedor-header">
+        <img src="../assets/img/Logo.png" alt="Logo" class="logo" />
+        <img id="btn-menu" src="../assets/img/menu.png" alt="menu" class="hamburguesa" />
+      </div>
+      <nav id="nav-header">
+        <img id="btn-close" src="../assets/img/icon-close-menu.svg" alt="Close" />
+        <button id="inicio">Inicio</button>
+        <button id="Login">LogIN</button>
+        <button id="Signup">SignUP</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h1>Iniciar Sesión</h1>
+        <form id="form-login">
+          <input type="text" id="usuario-login" placeholder="Usuario" required/>
+          <input type="password" id="password-login" placeholder="Contraseña" required/>
+          <button type="submit">Entrar</button>
+          <p id="error-login"></p>
+          <p>¿No tienes cuenta? <span>Registrate</span></p>
+        </form>
+      </section>
+    </main>
+
+    <div id="modalLogin" class="modal-fondo oculto">
+      <div class="modal-mensaje">
+        <button class="modal-cerrar" id="cerrarModal" title="Cerrar mensaje">X</button>
+        <p>Login completado correctamente ✅</p>
+      </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

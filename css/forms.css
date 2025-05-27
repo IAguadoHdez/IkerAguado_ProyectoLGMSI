@@ -1,0 +1,229 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0; 
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 90%;
+  background-color: var(--c3);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h1 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-grupo {
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: text;
+  padding-right: 35px; 
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: auto;
+  margin-right: 8px;
+}
+
+.form-container button[type="submit"] {
+  padding: 10px;
+  background-color: var(--accent);
+  color: var(--c1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.form-container button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--celeste);
+  color: var(--c4);
+}
+
+label {
+  font-size: 15px;
+  user-select: none;
+  display: inline-block;
+}
+
+.error-message {
+  color: red;
+  font-size: 13px; 
+  height: 14px;
+  margin-top: 3px;
+}
+
+.input-grupo.invalid input {
+  border-color: red;
+}
+
+#password-strength {
+  margin-top: 6px;
+  height: 8px;
+  width: 100%;
+  background-color: var(--c2);
+  border-radius: 4px;
+  overflow: hidden; 
+  transition: width 0.3s ease;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  bottom: 45%;
+  cursor: pointer;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+}
+
+.form-container button:disabled {
+  background-color: var(--c4);
+  cursor: not-allowed;
+}
+
+.modal-fondo.oculto {
+  display: none;
+}
+
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;  
+  height: 100vh;  
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-mensaje {
+  background-color: var(--c1);
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;      
+  font-weight: bold;    
+  color: var(--c4);         
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.modal-cerrar:hover {
+  color: var(--accent);
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+@media (min-width: 577px) {
+  .form-container {
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .form-container h1 {
+    font-size: 26px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  .form-container button[type="submit"] {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .form-container {
+    max-width: 600px;
+    padding: 40px;
+  }
+
+  .form-container h1 {
+    font-size: 30px;
+  }
+
+  .form-container form {
+    gap: 20px;
+  }
+
+  label {
+    font-size: 17px;
+  }
+
+  .form-container button[type="submit"] {
+    font-size: 17px;
+    padding: 12px;
+  }
+
+  #error.login {
+    color: red;
+  }
+}

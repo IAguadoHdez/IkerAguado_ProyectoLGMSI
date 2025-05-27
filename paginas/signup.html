@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+  </head>
+  <body>
+    <header>
+      <div class="contenedor-header">
+        <img src="../assets/img/Logo.png" alt="Logo" class="logo" />
+        <img id="btn-menu" src="../assets/img/menu.png" alt="Menú" class="hamburguesa" />
+      </div>
+      <nav id="nav-header">
+        <img id="btn-close" src="../assets/img/icon-close-menu.svg" alt="Cerrar menú" />
+        <button id="inicio">Inicio</button>
+        <button id="Login">LogIN</button>
+        <button id="Signup">SignUP</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h1>Crear Cuenta</h1>
+        <form id="form-register" novalidate>
+
+          <div class="input-grupo">
+            <input id="usuario" type="text" name="usuario" placeholder="Usuario" required minlength="4" />
+            <p class="error-message"></p>
+          </div>
+
+          <div class="input-grupo">
+            <input id="email" type="email" name="email" placeholder="Correo electrónico" required />
+            <p class="error-message"></p>
+          </div>
+
+          <div class="input-grupo">
+            <input id="password" type="password" name="password" placeholder="Contraseña" required />
+            <button type="button" class="toggle-password" title="Mostrar contraseña">👀</button>
+            <p class="error-message"></p>
+            <div id="password-strength"></div>
+          </div>
+
+          <div class="input-grupo">
+            <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirmar contraseña" required />
+            <button type="button" class="toggle-password" title="Mostrar contraseña">👀</button>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="checkbox-container">
+            <div class="checkbox-item">
+              <input id="terminos" type="checkbox" name="terminos" required />
+              <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+            <div class="checkbox-item">
+              <input id="editor" type="checkbox" name="editor" />
+              <label for="editor">¿Quieres ser editor?</label>
+            </div>
+          </div>
+
+          <button type="submit" disabled>Registrarse</button>
+        </form>
+      </section>
+    </main>
+
+    <div id="modalRegistro" class="modal-fondo oculto">
+      <div class="modal-mensaje">
+        <button class="modal-cerrar" id="cerrarModal" title="Cerrar mensaje">X</button>
+        <p>Registro completado correctamente ✅</p>
+      </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/signup.js"></script>
+    <script>
