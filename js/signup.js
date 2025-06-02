@@ -1,7 +1,7 @@
-// Espera a que el DOM esté completamente cargado
+
 document.addEventListener("DOMContentLoaded", function () {
   
-  // Define la URL base según si está en local o en servidor
+
   const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/IkerAguado_ProyectoLGMSI";
   
   // Obtiene referencias a los elementos del formulario
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnCerrarModal = document.getElementById('cerrarModal');
   const strengthContainer = document.getElementById("password-strength");
 
-  // Carga los usuarios guardados en localStorage, o crea un array vacío si no hay ninguno
+  // Carga los usuarios guardados en localStorage o crea un array si esta vacio
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  // Guarda referencias a los mensajes de error en el formulario
+  // Array de los errores
   const errores = {
     usuario: usuario?.parentElement.querySelector(".error-message"),
     email: email?.parentElement.querySelector(".error-message"),
@@ -179,11 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Muestra el modal y resetea el formulario
+    // Muestra el modal
     mostrarModalRegistro();
-    form.reset();
-    btnSubmit.disabled = true;
-    strengthBar.style.width = "0%";
-    strengthBar.style.backgroundColor = "transparent";
   });
 });

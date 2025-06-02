@@ -83,6 +83,12 @@
   transition: background-color 0.3s ease;
 }
 
+#CLike {
+  width: 40px; 
+  height: 40px;
+  cursor: pointer; 
+}
+
 .contacto:hover {
   background-color: var(--accent);
 }
