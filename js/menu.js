@@ -66,10 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnSignup) btnSignup.style.display = "none";
   }
 
-  // -- Parte del usuario logueado --
+  // Usuario logueado
   const usuarioActual = localStorage.getItem("usuarioActual");
-
+  const esEditor = localStorage.getItem("esEditor") === "true";
   if (usuarioActual) {
+
+    const nUsuario = document.createElement("span");
+    nUsuario.textContent = esEditor ? `${usuarioActual}(Editor)` : usuarioActual;
+
     if (btnLogin) btnLogin.style.display = "none";
     if (btnSignup) btnSignup.style.display = "none";
 
@@ -107,6 +111,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navHeader) {
         navHeader.appendChild(userDiv);
       }
+
+      if(esEditor){
+        const btnAdmin = document.createElement("button");
+        btnAdmin.textContent ="Editor";
+        btnAdmin.style.padding = "4px 8px";
+        btnAdmin.style.border ="none";
+        btnAdmin.style.border ="6px";
+        btnAdmin.style.cursor ="pointer";
+
+        btnAdmin.addEventListener("click", () =>{
+          location.href = `${BASE_URL}/paginas/admin.html`;
+        })
+        userDiv.appendChild(btnAdmin);
+      }
     }
+    
+
   }
 });

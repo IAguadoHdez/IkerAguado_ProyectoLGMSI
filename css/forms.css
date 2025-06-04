@@ -180,6 +180,9 @@ label {
   gap: 8px;
 }
 
+#login-register span {
+  cursor: pointer;
+}
 
 @media (min-width: 577px) {
   .form-container {

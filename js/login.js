@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/IkerAguado_ProyectoLGMSI";
+  const loginRegister = document.getElementById("login-register")
 
+if (loginRegister) {
+    loginRegister.addEventListener("click", () => {
+      location.href = `${BASE_URL}signup.html`;
+    });
+  }
 
   if (!localStorage.getItem("usuarios")) {
     const usuariosIniciales = [];

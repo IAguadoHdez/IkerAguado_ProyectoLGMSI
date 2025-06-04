@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById('modalRegistro');
   const btnCerrarModal = document.getElementById('cerrarModal');
   const strengthContainer = document.getElementById("password-strength");
+  const editor = document.getElementById("editor");
 
   // Carga los usuarios guardados en localStorage o crea un array si esta vacio
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -164,6 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!validarCampos()) return;
 
+    
+
     // Comprueba si el usuario ya está registrado
     if (usuarios.some(u => u.usuario === usuario.value.trim())) {
       errores.usuario.textContent = "Este nombre de usuario ya está registrado.";
@@ -179,7 +182,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Muestra el modal
-    mostrarModalRegistro();
+
+
+    // Comprobar si eres editor 
+    if (editor.checked){
+      localStorage.setItem("esEditor","true")
+      location.href = `${BASE_URL}admin.html`;
+    } else {
+      localStorage.removeItem("esEditor")
+      mostrarModalRegistro();
+    }
   });
 });

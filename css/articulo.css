@@ -48,7 +48,6 @@
   max-width: 500px;
   height: auto;
   border-radius: 10px;
-  object-fit: cover;
 }
 
 .text-a {
@@ -91,6 +90,10 @@
 
 .contacto:hover {
   background-color: var(--accent);
+}
+
+#cuantosLikes {
+  font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {
