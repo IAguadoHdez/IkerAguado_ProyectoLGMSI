@@ -44,18 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.classList.add('oculto');
       location.href = `${BASE_URL}login.html`;
     });
-  }
+  };
 
   // Muestra el modal de registro exitoso
   function mostrarModalRegistro() {
     modal.classList.remove('oculto');
-  }
+  };
 
   // Comprueba si un email tiene formato válido
   function validarEmail(email) {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
-  }
+  };
 
   // Calcula la fuerza de la contraseña (de 0 a 4)
   function fuerzaPassword(pass) {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (/[0-9]/.test(pass)) fuerza++;
     if (/[\W]/.test(pass)) fuerza++;
     return fuerza;
-  }
+  };
 
   // Actualiza el color y el tamaño de la barra de fuerza según la contraseña
   function actualizarFuerzaPassword() {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (fuerza === 2) strengthBar.style.backgroundColor = "orange";
     else if (fuerza === 3) strengthBar.style.backgroundColor = "yellowgreen";
     else strengthBar.style.backgroundColor = "green";
-  }
+  };
 
   // Actualiza la barra y valida campos al escribir contraseña
   password.addEventListener("input", function () {  
@@ -141,18 +141,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return valido;
-  }
+  };
 
   // Habilita o deshabilita el botón de enviar según si los campos son válidos
   function validarCamposYActualizarBoton() {
     btnSubmit.disabled = !validarCampos();
-  }
+  };
 
   // Añade eventos de validación a los inputs
   function añadirEventos(elem) {
     elem.addEventListener("input", validarCamposYActualizarBoton);
     elem.addEventListener("change", validarCamposYActualizarBoton);
-  }
+  };
 
   // Aplica los eventos a los campos del formulario
   [usuario, email, password, confirmPassword, terminos].forEach(añadirEventos);
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (usuarios.some(u => u.usuario === usuario.value.trim())) {
       errores.usuario.textContent = "Este nombre de usuario ya está registrado.";
       return;
-    }
+    };
 
     // Guarda el nuevo usuario en localStorage
     usuarios.push({
@@ -187,10 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Comprobar si eres editor 
     if (editor.checked){
       localStorage.setItem("esEditor","true")
-      location.href = `${BASE_URL}admin.html`;
+      location.href = `${BASE_URL}/admin.html`;
     } else {
       localStorage.removeItem("esEditor")
       mostrarModalRegistro();
-    }
+    };
   });
 });

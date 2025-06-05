@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Debes iniciar sesión");
       location.href = "login.html";
       return;
-    }
+    };
 
     liked = !liked;
     corazon.src = liked ? "../assets/img/corazon.png" : "../assets/img/corazonC.png";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Estado like cambiado a:", liked);
 
     actualizarContadorLikes();
-  })
+  });
 
   function actualizarContadorLikes(clave,liked){
     let likestotales = 0;
@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const valor = localStorage.getItem(llave);
         if(valor === "true"){
           likestotales++;
-        }
-      }
-    }
+        };
+      };
+    };
     cuentaLikes.textContent = likestotales;
-  }
+  };
 
   
 });

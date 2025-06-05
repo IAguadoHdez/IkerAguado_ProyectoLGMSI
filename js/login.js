@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 if (loginRegister) {
     loginRegister.addEventListener("click", () => {
-      location.href = `${BASE_URL}signup.html`;
+      location.href = `${BASE_URL}/signup.html`;
     });
-  }
+  };
 
   if (!localStorage.getItem("usuarios")) {
     const usuariosIniciales = [];
     localStorage.setItem("usuarios", JSON.stringify(usuariosIniciales));
-  }
+  };
 
   const formLogin = document.getElementById("form-login");
   const usuarioInput = document.getElementById("usuario-login");
@@ -29,12 +29,12 @@ if (loginRegister) {
     if (!usuarioBuscado) {
       errorMensaje.textContent = "Usuario no encontrado.";
       return;
-    }
+    };
 
     if (usuarioBuscado.password !== passwordInput.value) {
       errorMensaje.textContent = "Contraseña incorrecta.";
       return;
-    }
+    };
 
     errorMensaje.textContent = "";
 

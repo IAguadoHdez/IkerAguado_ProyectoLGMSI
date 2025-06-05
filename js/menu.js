@@ -28,43 +28,43 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
       } else {
         location.href = `${BASE_URL}/index.html`;
-      }
+      };
     });
-  }
+  };
 
   if (inicio) {
     inicio.addEventListener("click", () => {
       location.href = `${BASE_URL}/index.html`;
     });
-  }
+  };
 
   if (aboutUsLink) {
     aboutUsLink.addEventListener("click", () => {
       location.href = `${BASE_URL}/paginas/aboutme.html`;
     });
-  }
+  };
 
   if (btnLogin) {
     btnLogin.addEventListener("click", () => {
       location.href = `${BASE_URL}/paginas/login.html`;
     });
-  }
+  };
 
   if (btnSignup) {
     btnSignup.addEventListener("click", () => {
       location.href = `${BASE_URL}/paginas/signup.html`;
     });
-  }
+  };
 
   // Ocultar botones según la página
   if (currentPage === "login.html") {
     if (btnLogin) btnLogin.style.display = "none";
     if (btnSignup) btnSignup.onclick = () => location.href = `${BASE_URL}/paginas/signup.html`;
-  }
+  };
 
   if (currentPage === "signup.html") {
     if (btnSignup) btnSignup.style.display = "none";
-  }
+  };
 
   // Usuario logueado
   const usuarioActual = localStorage.getItem("usuarioActual");
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (navHeader) {
         navHeader.appendChild(userDiv);
-      }
+      };
 
       if(esEditor){
         const btnAdmin = document.createElement("button");
@@ -124,9 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           location.href = `${BASE_URL}/paginas/admin.html`;
         })
         userDiv.appendChild(btnAdmin);
-      }
-    }
-    
-
-  }
+      };
+    };
+  };
 });
