@@ -90,17 +90,25 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
   });
 
+  password.addEventListener("cut", function(e){
+    e.preventDefault();
+  });
+
+  password.addEventListener("copy",function(e){
+    e.preventDefault();
+  })
+
   // Alternar visibilidad de la contraseña al hacer clic en el icono
   document.querySelectorAll(".toggle-password").forEach(function (toggle) {
     toggle.addEventListener("click", function () {
       const input = toggle.previousElementSibling;
       if (input.type === "password") {
         input.type = "text";
-        toggle.textContent = "🙈";
+        toggle.textContent = "🕶️";
         toggle.title = "Ocultar contraseña";
       } else {
         input.type = "password";
-        toggle.textContent = "👀";
+        toggle.textContent = "👓";
         toggle.title = "Mostrar contraseña";
       }
     });
@@ -160,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Desactiva el botón de enviar al inicio
   btnSubmit.disabled = true;
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) { // si no funciona form.
     e.preventDefault();
 
     if (!validarCampos()) return;
@@ -177,20 +185,20 @@ document.addEventListener("DOMContentLoaded", function () {
     usuarios.push({
       usuario: usuario.value.trim(),
       email: email.value.trim(),
-      password: password.value
+      password: password.value,
+      esEditor: esEditor.checked
     });
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-
+      mostrarModalRegistro();
 
     // Comprobar si eres editor 
     if (editor.checked){
-      localStorage.setItem("esEditor","true")
-      location.href = `${BASE_URL}/admin.html`;
+      location.href = `${BASE_URL}/paginas/admin.html`;
     } else {
-      localStorage.removeItem("esEditor")
-      mostrarModalRegistro();
+      location.href = `${BASE_URL}/paginas/login.html`
+
     };
   });
 });
