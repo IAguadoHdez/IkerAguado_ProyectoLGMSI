@@ -190,7 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Si es editor , se inicia sesion automaticamente
     if(editor.checked){
-    localStorage.setItem("usuarioActivo",JSON.stringify(nuevoUsuario));
+    localStorage.setItem("usuarioActual",JSON.stringify(nuevoUsuario));
+    localStorage.setItem("esEditor", nuevoUsuario.esEditor);
     }
 
 
