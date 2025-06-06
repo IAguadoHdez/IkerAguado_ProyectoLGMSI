@@ -11,12 +11,12 @@
 /* Fuentes */
 @font-face {
   font-family: "Rubik";
-  src: url(./fonts/Rubik/static/Rubik-Regular.ttf) format('truetype');
+  src: url(../fonts/Rubik/static/Rubik-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url(./fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+  src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
 * {
