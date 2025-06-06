@@ -168,10 +168,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Desactiva el botón de enviar al inicio
   btnSubmit.disabled = true;
 
-  form.addEventListener("submit", function (e) { // si no funciona form.
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     if (!validarCampos()) return;
+
+    
+
     // Comprueba si el usuario ya está registrado
     if (usuarios.some(u => u.usuario === usuario.value.trim())) {
       errores.usuario.textContent = "Este nombre de usuario ya está registrado.";
@@ -179,21 +182,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Guarda el nuevo usuario en localStorage
-    const nuevoUsuario = {
+    usuarios.push({
       usuario: usuario.value.trim(),
       email: email.value.trim(),
       password: password.value,
       esEditor: editor.checked
-    }
-    usuarios.push(nuevoUsuario);
+    });
+
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    // Si es editor , se inicia sesion automaticamente
-    if(editor.checked){
-    localStorage.setItem("usuarioActual",JSON.stringify(nuevoUsuario));
-    localStorage.setItem("esEditor", nuevoUsuario.esEditor);
-    }
-
 
       mostrarModalRegistro();
 
@@ -206,5 +202,5 @@ document.addEventListener("DOMContentLoaded", function () {
               location.href = `${BASE_URL}/paginas/login.html`;
             }
       });
-  });
+});
 });
