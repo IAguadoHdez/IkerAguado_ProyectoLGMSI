@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       valido = false;
     }
 
-    if (password.value.length < 8) {
+    if (password.value.length <= 8) {
       errores.password.textContent = "La contraseña debe tener al menos 8 caracteres.";
       valido = false;
     }
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
       password: password.value,
       esEditor: editor.checked
     }
-    usuario.push(nuevoUsuario);
+    usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     // Si es editor , se inicia sesion automaticamente
