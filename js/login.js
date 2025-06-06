@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 if (loginRegister) {
     loginRegister.addEventListener("click", () => {
-      location.href = `${BASE_URL}/signup.html`;
+      location.href = `${BASE_URL}/paginas/signup.html`;
     });
   };
 

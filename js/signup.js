@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
       usuario: usuario.value.trim(),
       email: email.value.trim(),
       password: password.value,
-      esEditor: esEditor.checked
+      esEditor: editor.checked
     });
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -194,11 +194,13 @@ document.addEventListener("DOMContentLoaded", function () {
       mostrarModalRegistro();
 
     // Comprobar si eres editor 
-    if (editor.checked){
-      location.href = `${BASE_URL}/paginas/admin.html`;
-    } else {
-      location.href = `${BASE_URL}/paginas/login.html`
-
-    };
+    btnCerrarModal.addEventListener("click",() =>{
+      modal.classList.add('oculto');
+          if (editor.checked){
+            location.href = `${BASE_URL}/paginas/admin.html`;
+            } else {
+              location.href = `${BASE_URL}/paginas/login.html`;
+            }
+      });
   });
 });
