@@ -13,6 +13,7 @@ if (loginRegister) {
     localStorage.setItem("usuarios", JSON.stringify(usuariosIniciales));
   };
 
+
   const formLogin = document.getElementById("form-login");
   const usuarioInput = document.getElementById("usuario-login");
   const passwordInput = document.getElementById("password-login");
@@ -33,6 +34,7 @@ if (loginRegister) {
 
     if (usuarioBuscado.password !== passwordInput.value) {
       errorMensaje.textContent = "Contraseña incorrecta.";
+
       return;
     };
 
