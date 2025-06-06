@@ -101,14 +101,8 @@ p, label {
 }
 
 .heart:hover {
-  background-color: var(--c3);
-  color: red;
-  font-weight: bold;
-  width: 65px;
-  height: 25px;
-  border-radius: 8px;
   transition: 0.4s ease-in;
-  cursor: pointer;
+
 }
 
 /* Header */
