@@ -172,9 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     if (!validarCampos()) return;
-
-    
-
     // Comprueba si el usuario ya está registrado
     if (usuarios.some(u => u.usuario === usuario.value.trim())) {
       errores.usuario.textContent = "Este nombre de usuario ya está registrado.";
@@ -182,14 +179,20 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Guarda el nuevo usuario en localStorage
-    usuarios.push({
+    const nuevoUsuario = {
       usuario: usuario.value.trim(),
       email: email.value.trim(),
       password: password.value,
       esEditor: editor.checked
-    });
-
+    }
+    usuario.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    // Si es editor , se inicia sesion automaticamente
+    if(editor.checked){
+    localStorage.setItem("usuarioActivo",JSON.stringify(nuevoUsuario));
+    }
+
 
       mostrarModalRegistro();
 
